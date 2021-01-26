@@ -14,7 +14,7 @@ function App() {
     includeScore:true
   })
 
-  const results = fuse.search(query);
+  const results = fuse.search(query, {limit:10});
   const dataResults = results.map(result => result.item);
 
   const handleSearch = ({ currentTarget = {} }) => {
@@ -49,7 +49,7 @@ function App() {
                     <strong>Style:</strong> { style }
                   </li>
                   <li>
-                    <img src = {`${img}`} alt = { `${ color }` }/>
+                    <img src = {`${img}`} alt = { `${ color }` } width = "200px"/>
                   </li>
                 </ul>
               </li>
